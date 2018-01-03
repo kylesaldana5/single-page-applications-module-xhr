@@ -12,6 +12,12 @@ let showCarnivores = function(animals) {
     }); 
 };
 
-function showHerbivores() { }
+let showHerbivores = function(animals) { 
+    herbDiv.innerHTML += "Herbivores";
+    animals.herbivores.foreach( element =>{
+        herbDiv.innerHTML += (element.species) + '';
+    });
+};
 
 animal.loadCarnivores(showCarnivores);
+animal.loadHerbivores(showHerbivores);
