@@ -1,23 +1,24 @@
 "use strict";
 const animal = require("./animal");
 
-let carnDiv = document.getElementById("carnivores");
-let herbDiv = document.getElementById("herbivores");
+let herbDiv = document.getElementById("herbDiv");
+let carnDiv = document.getElementById("carnDiv");
 
-let showCarnivores = function(animals) {
-    // code that takes the carnovores array and displays it to the DOM
-    carnDiv.innerHTML += "Carnivores";
-    animals.carnivores.foreach( element =>{
-        carnDiv.innerHTML += (element.species) + '';
-    }); 
+
+let showCarnivore = function (animals) {
+    carnDiv.innerHTML += "Carnivores: ";
+    animals.carnivores.forEach(element => {
+        carnDiv.innerHTML += (element.species) + ' ';
+    });
 };
-
-let showHerbivores = function(animals) { 
-    herbDiv.innerHTML += "Herbivores";
-    animals.herbivores.foreach( element =>{
-        herbDiv.innerHTML += (element.species) + '';
+let showHerbivore = function (animals) {
+    herbDiv.innerHTML += "Herbivores: ";
+    animals.herbivores.forEach(element => {
+        herbDiv.innerHTML += (element.species) + ' ';
     });
 };
 
-animal.loadCarnivores(showCarnivores);
-animal.loadHerbivores(showHerbivores);
+
+animal.loadCarnivores(showCarnivore);
+animal.loadHerbivores(showHerbivore);
+
